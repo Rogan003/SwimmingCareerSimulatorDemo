@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1588444463 source:c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\main.cpp
+	<iostream>
+	<cmath>
+	<ctime>
+	<cstdlib>
+	<list>
+	"drzava.hpp"
+	"trener.hpp"
+	"bazen.hpp"
+	"oprema.hpp"
+	"uprava.hpp"
+	"plivaci.hpp"
+	"klub.hpp"
+	"porodica.hpp"
+	"drustvo.hpp"
+	"drustvoskola.hpp"
+	"drustvoplivanje.hpp"
+	"slobodnovreme.hpp"
+	"spavanje.hpp"
+	"opustanje.hpp"
+	"ljubav.hpp"
+	"zivot.hpp"
+	"tipicnaoprema.hpp"
+	"karbon.hpp"
+	"naocare.hpp"
+	"kapa.hpp"
+	"mrezica.hpp"
+	"licnaoprema.hpp"
+	"treninzi.hpp"
+	"vodenitrening.hpp"
+	"teretana.hpp"
+	"suvi.hpp"
+	"trenazniproces.hpp"
+	"plivac.hpp"
+
+1588442354 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drzava.hpp
+
+1588442402 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\trener.hpp
+
+1588442475 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\bazen.hpp
+
+1588442503 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\oprema.hpp
+
+1588442590 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\uprava.hpp
+
+1588442617 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\plivaci.hpp
+
+1588442659 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\klub.hpp
+
+1588442709 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\porodica.hpp
+
+1588442742 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvo.hpp
+
+1588442799 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvoskola.hpp
+
+1588442843 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvoplivanje.hpp
+
+1588442885 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\slobodnovreme.hpp
+
+1588442915 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\spavanje.hpp
+
+1588442947 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\opustanje.hpp
+
+1588442985 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\ljubav.hpp
+
+1588443032 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\zivot.hpp
+
+1588443064 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\tipicnaoprema.hpp
+
+1588443099 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\karbon.hpp
+
+1588443129 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\naocare.hpp
+
+1588443163 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\kapa.hpp
+
+1588443198 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\mrezica.hpp
+
+1588443248 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\licnaoprema.hpp
+
+1588443286 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\treninzi.hpp
+
+1588443315 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\vodenitrening.hpp
+
+1588443347 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\teretana.hpp
+
+1588443377 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\suvi.hpp
+
+1588443428 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\trenazniproces.hpp
+
+1588443472 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\plivac.hpp
+
