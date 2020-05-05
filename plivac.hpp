@@ -2,14 +2,13 @@
 #define PLIVAC_HPP_INCLUDED
 class Plivac{
 private:
-    float rez,brez;
+    float rez,brez,talenat;
     string ime,prezime;
     int godine;
     Klub klub;
     trenazniProces trening;
     Zivot zivot;
     licnaOprema stvari;
-    int talenat;
 public:
     Plivac(string a, string b, int c, float d) : klub(), trening(), zivot(), stvari(){
         ime=a;
@@ -26,7 +25,7 @@ public:
             rez=64.5;
         else
             rez=d+20;
-        talenat=rand()%3+1;
+        talenat=(rand()%200+100)/300.00;
         brez=rez;
     }
     Plivac(const Plivac &a) : klub(a.klub), trening(a.trening), zivot(a.zivot), stvari(a.stvari){
@@ -55,7 +54,7 @@ public:
     int getGodine()const{
         return godine;
     }
-    int getTalenat()const{
+    float getTalenat()const{
         return talenat;
     }
     string getIme()const{
@@ -204,9 +203,6 @@ public:
     int getOpustanje()const{
         return zivot.getOpustanje();
     }
-    bool getLjubavPostoji()const{
-        return zivot.getLjubavPostoji();
-    }
     int getLjubavKvalitet()const{
         return zivot.getLjubavKvalitet();
     }
@@ -237,9 +233,6 @@ public:
     void setOpustanje(int a){
         zivot.setOpustanje(a);
     }
-    void setLjubavPostoji(bool a){
-        zivot.setLjubavPostoji(a);
-    }
     void setLjubavKvalitet(int a){
         zivot.setLjubavKvalitet(a);
     }
@@ -252,11 +245,17 @@ public:
     int getbrMedDrzave()const{
         return klub.getbrMedDrzave();
     }
-    string getImeTrenera()const{
-        return klub.getImeTrenera();
+    string getImeTrenera(int i){
+        return klub.getImeTrenera(i);
     }
-    int getSpremaTrenera()const{
-        return klub.getSpremaTrenera();
+    float getSpremaTrenera(int i){
+        return klub.getSpremaTrenera(i);
+    }
+    void dodajTrenera(string a, float b){
+        klub.dodajTrenera(a,b);
+    }
+    bool izaberiTrenera(string a){
+        return klub.izaberiTrenera(a);
     }
     int getBrTrofeja()const{
         return klub.getBrTrofeja();
@@ -264,11 +263,11 @@ public:
     string getNaziv()const{
         return klub.getNaziv();
     }
-    int getUsloviBazena()const{
-        return klub.getUsloviBazena();
+    float getUsloviBazena(int i){
+        return klub.getUsloviBazena(i);
     }
-    int getUdaljenostBazena()const{
-        return klub.getUdaljenostBazena();
+    int getUdaljenostBazena(int i){
+        return klub.getUdaljenostBazena(i);
     }
     int getKvalitetOpreme()const{
         return klub.getKvalitetOpreme();
@@ -276,10 +275,10 @@ public:
     int getKvantitetOpreme()const{
         return klub.getKvantitetOpreme();
     }
-    int getUticajnostUprave()const{
+    float getUticajnostUprave()const{
         return klub.getUticajnostUprave();
     }
-    int getFinansijeUprave()const{
+    float getFinansijeUprave()const{
         return klub.getFinansijeUprave();
     }
     int getBrojLjudiUprave()const{
@@ -297,17 +296,23 @@ public:
     void setDrzavaBrMedalja(int a){
         klub.setDrzavaBrMedalja(a);
     }
-    void setImeTrenera(string a){
-        klub.setImeTrenera(a);
+    void setImeTrenera(string a, int i){
+        klub.setImeTrenera(a,i);
     }
-    void setSpremaTrenera(int a){
-        klub.setSpremaTrenera(a);
+    void setSpremaTrenera(float a, int i){
+        klub.setSpremaTrenera(a,i);
     }
-    void setUsloviBazena(int a){
-        klub.setUsloviBazena(a);
+    void setUsloviBazena(float a, int i){
+        klub.setUsloviBazena(a,i);
     }
-    void setUdaljenostBazena(int a){
-        klub.setUdaljenostBazena(a);
+    void setUdaljenostBazena(int a, int i){
+        klub.setUdaljenostBazena(a,i);
+    }
+    void dodajBazen(float a, int b){
+        klub.dodajBazen(a,b);
+    }
+    bool izaberBazen(int i){
+        return klub.izaberiBazen(i);
     }
     void setKvalitetOpreme(int a){
         klub.setKvalitetOpreme(a);
@@ -315,13 +320,13 @@ public:
     void setKvantitetOpreme(int a){
         klub.setKvantitetOpreme(a);
     }
-    void setUticajnostUprave(int a){
+    void setUticajnostUprave(float a){
         klub.setUticajnostUprave(a);
     }
     void setBrojLjudiUprave(int a){
         klub.setBrojLjudiUprave(a);
     }
-    void setFinansijeUprave(int a){
+    void setFinansijeUprave(float a){
         klub.setFinansijeUprave(a);
     }
     void setKolicinaPlivaca(int a){
@@ -364,8 +369,7 @@ public:
             pom1=godine/18.00;
         else
             pom1=pom1-godine+18.00;
-        float pom2=talenat/3.00;
-        rez=rez-((trening.getKvalitet()*26/32+(klub.getKvalitet()*3+zivot.getKvalitet()*2+stvari.getKvalitet(player)/6)/4)+pom1)*pom2;
+        rez=rez-((trening.getKvalitet()*26/32+(klub.getKvalitet()*3+zivot.getKvalitet()*2+stvari.getKvalitet(player)/6)/4)+pom1)*talenat;
         if(bitno)
             rez-=0.35;
         trening.smanjiUmor();
@@ -441,7 +445,7 @@ public:
             ++i;
         else
             ++j;
-        if(p1.getOprema()>p2.getOprema())
+        if(p1.getTalenat()>p2.getTalenat())
             ++i;
         else
             ++j;
@@ -468,7 +472,7 @@ public:
             ++i;
         else
             ++j;
-        if(p1.getOprema()<p2.getOprema())
+        if(p1.getTalenat()<p2.getTalenat())
             ++i;
         else
             ++j;

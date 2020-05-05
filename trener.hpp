@@ -2,11 +2,11 @@
 #define TRENER_HPP_INCLUDED
 class Trener{
 private:
-    int sprema;
+    float sprema;
     string ime;
 public:
     Trener(){
-        sprema=rand()%5+1;
+        sprema=(rand()%400+100)/100.00;
         int pom=rand()%5;
         if(pom==0)
             ime="Ivan";
@@ -19,25 +19,26 @@ public:
         else if(pom==4)
             ime="Mark";
     }
-    Trener(int a,string b){
+    Trener(float a,string b){
         if(a>=5)
             sprema=5;
         else if(a<=1)
             sprema=1;
         else
             sprema=a;
+        ime=b;
     }
     Trener(const Trener &a){
         sprema=a.sprema;
         ime=a.ime;
     }
-    int getSprema()const{
+    float getSprema()const{
         return sprema;
     }
     string getIme()const{
         return ime;
     }
-    void setSprema(int a){
+    void setSprema(float a){
         if(a>=5)
             sprema=5;
         else if(a<=1)

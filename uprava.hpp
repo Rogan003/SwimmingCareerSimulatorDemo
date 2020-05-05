@@ -2,16 +2,16 @@
 #define UPRAVA_HPP_INCLUDED
 class Uprava{
 private:
-    int finansije;
+    float finansije;
     int brojLjudi;
-    int uticajnost;
+    float uticajnost;
 public:
     Uprava(){
-        finansije=rand()%10+1;
-        brojLjudi=rand()%10+5;
-        uticajnost=rand()%3+1;
+        finansije=(rand()%900+100)/100.00;
+        brojLjudi=rand()%9+5;
+        uticajnost=(rand()%200+100)/100.00;
     }
-    Uprava(int a, int b, int c){
+    Uprava(float a, int b, float c){
         if(b<0)
             brojLjudi=0;
         else
@@ -34,13 +34,13 @@ public:
         brojLjudi=a.brojLjudi;
         uticajnost=a.uticajnost;
     }
-    int getFinansije()const{
+    float getFinansije()const{
         return finansije;
     }
     int getbrojLjudi()const{
         return brojLjudi;
     }
-    int getUticajnost()const{
+    float getUticajnost()const{
         return uticajnost;
     }
     void setBrojLjudi(int a){
@@ -51,7 +51,7 @@ public:
         else
             brojLjudi=a;
     }
-    void setFinansije(int a){
+    void setFinansije(float a){
         if(a>=10)
             finansije=10;
         else if(a<=1)
@@ -59,7 +59,7 @@ public:
         else
             finansije=a;
     }
-    void setUticajnost(int c){
+    void setUticajnost(float c){
         if(c>=3)
             uticajnost=3;
         else if(c<=1)

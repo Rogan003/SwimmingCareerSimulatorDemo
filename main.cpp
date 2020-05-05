@@ -68,6 +68,28 @@ int main()
     do{
         cout<<"Nedelja: "<<nedelja<<" Mesec: "<<mesec<<" Godina: "<<godina<<"("<<p1.getGodine()<<" godina)"<<endl;
         if(nedelja==1 && mesec==1){
+            cout<<"Da li zelite da dodate bazen: ";
+            string rec;
+            cin>>rec;
+            if(rec=="da"){
+                cout<<"Unesite udaljenost: ";
+                int udalj;
+                cin>>udalj;
+                float us=(rand()%400+100)/100.00;
+                p1.dodajBazen(us,udalj);
+            }
+            cout<<"Unesite redni broj bazena na kom zelite da trenirate sl godine: ";
+            int baz;
+            cin>>baz;
+            bool pomocnaprom=false;
+            while(!pomocnaprom){
+                pomocnaprom=p1.izaberBazen(baz);
+                if(pomocnaprom==false){
+                    cout<<"Nepostojeci redni broj bazena! Pokusajte ponovo: "<<endl;
+                    cout<<"Unesite redni broj bazena na kom zelite da trenirate sl godine: ";
+                    cin>>baz;
+                }
+            }
             cout<<"Unesite koju opremu zelite da kupite(redom karbon,naocare,kapa,mrezica)(0-nista, 1-TYR, 2-Speedo, 3-Arena): ";
             cin>>p1.getOprema();
             cout<<"Koliko takmicenja zelite da imate ove godine: ";
@@ -300,12 +322,25 @@ int main()
                 string pomm;
                 cin>>pomm;
                 if(pomm=="da"){
-                    cout<<"Unesite ime trenera: ";
+                    cout<<"Unesite 1 za novog trenera, a 2 za vec postojeceg: ";
+                    int brojtr;
+                    cin>>brojtr;
                     string imeTrenera;
+                    cout<<"Unesite ime trenera: ";
                     cin>>imeTrenera;
-                    p1.setImeTrenera(imeTrenera);
-                    int nes=rand()%5+1;
-                    p1.setSpremaTrenera(nes);
+                    if(brojtr==1){
+                        float nes=(rand()%400+100)/100.00;
+                        p1.dodajTrenera(imeTrenera,nes);
+                    }
+                    bool pomoc=false;
+                    while(!pomoc){
+                        pomoc=p1.izaberiTrenera(imeTrenera);
+                        if(!pomoc){
+                            cout<<"Nepostojeci trener! Izaberite ponovo: "<<endl;
+                            cout<<"Unesite ime trenera: ";
+                            cin>>imeTrenera;
+                        }
+                    }
                 }
             }
             p1.povecajGodine();

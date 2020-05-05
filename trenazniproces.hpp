@@ -12,11 +12,8 @@ private:
 public:
     trenazniProces() : voda(),teretana(),suvi(){
         umor=0;
-        dolaznost=rand()%45+51;
-        if(dolaznost>=90)
-            trud=rand()%2+4;
-        else
-            trud=rand()%5+1;
+        dolaznost=100;
+        trud=rand()%5+1;
     }
     trenazniProces(int a, int b, int c, int d, int e) : voda(b), teretana(c), suvi(d,e){
         umor=0;
@@ -26,7 +23,7 @@ public:
             trud=1;
         else
             trud=a;
-        dolaznost=rand()%13+50+trud*7;
+        dolaznost=100;
     }
     trenazniProces(const trenazniProces &a) : voda(a.voda), teretana(a.teretana), suvi(a.suvi){
         umor=a.umor;
@@ -65,11 +62,17 @@ public:
     void odmaraj(){
         umor/=4;
         suvi.pogorsajIstegljivost();
+        dolaznost-=5;
     }
     void resetUkupno(){
         suvi.resetUkupno();
         teretana.resetUkupno();
         voda.resetUkupno();
+        if(dolaznost>=90)
+            trud=rand()%2+4;
+        else
+            trud=rand()%5+1;
+        dolaznost=100;
     }
     void teretanaTreniraj5(){
         umor+=3;

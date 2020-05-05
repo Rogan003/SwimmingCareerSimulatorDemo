@@ -4,15 +4,19 @@ class Klub{
 private:
     string naziv;
     Drzava nacionalnost;
-    Trener trener;
+    list <Trener> trener;
     int brTrofeja;
     float kvalitet;
-    Bazen bazen;
+    list <Bazen> bazen;
     Oprema oprema;
     Uprava uprava;
     Plivaci plivaci;
+    int redTrenera;
+    int brTrenera;
+    int redBazena;
+    int brBazena;
 public:
-    Klub() : nacionalnost(), trener(), bazen(), oprema(), uprava(), plivaci(){
+    Klub() : nacionalnost(), oprema(), uprava(), plivaci(){
         brTrofeja=rand()%30+5;
         int pom=rand()%6;
         if(pom==0)
@@ -27,16 +31,40 @@ public:
             naziv="Berlin Fins";
         if(pom==5)
             naziv="Rome Whales";
+        Trener t1;
+        list <Trener>::iterator i=trener.begin();
+        trener.insert(i,t1);
+        redTrenera=1;
+        brTrenera=1;
+        Bazen b1;
+        list <Bazen>::iterator it=bazen.begin();
+        bazen.insert(it,b1);
+        redBazena=1;
+        brBazena=1;
     }
-    Klub(drzava a, int b, int c,  string d, int e, int f, int g, int h, int i, int j, int k, int l, int m,int n, string o)
-    : nacionalnost(a,b), trener(c,d), bazen(e,f), oprema(g,h), uprava(i,j,k), plivaci(l,m){
+    Klub(drzava a, int b, float c,  string d, int e, int f, int g, int h, int i, int j, int k, int l, int m,int n, string o)
+    : nacionalnost(a,b), oprema(g,h), uprava(i,j,k), plivaci(l,m){
         brTrofeja=n;
         naziv=o;
+        Trener t1(c,d);
+        list <Trener>::iterator it=trener.begin();
+        trener.insert(it,t1);
+        redTrenera=1;
+        brTrenera=1;
+        list <Bazen>::iterator it2=bazen.begin();
+        Bazen b1(e,f);
+        bazen.insert(it2,b1);
+        redBazena=1;
+        brBazena=1;
     }
     Klub(const Klub &a) : nacionalnost(a.nacionalnost), trener(a.trener), bazen(a.bazen), oprema(a.oprema),
     uprava(a.uprava), plivaci(a.plivaci){
         brTrofeja=a.brTrofeja;
         naziv=a.naziv;
+        redTrenera=a.redTrenera;
+        brTrenera=a.brTrenera;
+        redBazena=a.redBazena;
+        brBazena=a.brBazena;
     }
     string getDrzava()const{
         return nacionalnost.nazivDrzave();
@@ -47,11 +75,15 @@ public:
     int getbrMedDrzave()const{
         return nacionalnost.brojMed();
     }
-    string getImeTrenera()const{
-        return trener.getIme();
+    string getImeTrenera(int i){
+        list <Trener>::iterator it=trener.begin();
+        for(int j=1;j<i;++j,++it){}
+        return it->getIme();
     }
-    int getSpremaTrenera()const{
-        return trener.getSprema();
+    float getSpremaTrenera(int i){
+        list <Trener>::iterator it=trener.begin();
+        for(int j=1;j<i;++j,++it){}
+        return it->getSprema();
     }
     int getBrTrofeja()const{
         return brTrofeja;
@@ -59,11 +91,18 @@ public:
     string getNaziv()const{
         return naziv;
     }
-    int getUsloviBazena()const{
-        return bazen.getUslovi();
+    float getUsloviBazena(int i){
+        list <Bazen>::iterator it=bazen.begin();
+        for(int j=1;j<i;++j,++it){}
+        return it->getUslovi();
     }
-    int getUdaljenostBazena()const{
-        return bazen.getUdaljenost();
+    int getUdaljenostBazena(int i){
+        list <Bazen>::iterator it=bazen.begin();
+        for(int j=1;j<i;++j,++it){}
+        return it->getUdaljenost();
+    }
+    int getRedBazena()const{
+        return redBazena;
     }
     int getKvalitetOpreme()const{
         return oprema.getKvalitet();
@@ -71,10 +110,10 @@ public:
     int getKvantitetOpreme()const{
         return oprema.getKvantitet();
     }
-    int getUticajnostUprave()const{
+    float getUticajnostUprave()const{
         return uprava.getUticajnost();
     }
-    int getFinansijeUprave()const{
+    float getFinansijeUprave()const{
         return uprava.getFinansije();
     }
     int getBrojLjudiUprave()const{
@@ -92,17 +131,62 @@ public:
     void setDrzavaBrMedalja(int a){
         nacionalnost.setMed(a);
     }
-    void setImeTrenera(string a){
-        trener.setIme(a);
+    void setImeTrenera(string a, int i){
+        list <Trener>::iterator it=trener.begin();
+        for(int j=1;j<i;++j,++it){}
+        it->setIme(a);
     }
-    void setSpremaTrenera(int a){
-        trener.setSprema(a);
+    void setSpremaTrenera(float a, int i){
+        list <Trener>::iterator it=trener.begin();
+        for(int j=1;j<i;++j,++it){}
+        it->setSprema(a);
     }
-    void setUsloviBazena(int a){
-        bazen.setUslovi(a);
+    void dodajTrenera(string a, float b){
+        brTrenera++;
+        Trener t1(b,a);
+        trener.push_back(t1);
     }
-    void setUdaljenostBazena(int a){
-        bazen.setUdaljenost(a);
+    bool izaberiTrenera(string a){
+        list <Trener>::iterator i=trener.begin();
+        int pom=0;
+        bool postoji=false;
+        do{
+            pom++;
+            if(i->getIme()==a){
+                postoji=true;
+                break;
+            }
+            ++i;
+        }while(pom<=brTrenera);
+        if(postoji)
+            redTrenera=pom;
+        return postoji;
+    }
+    int getRedTrenera()const{
+        return redTrenera;
+    }
+    void setUsloviBazena(float a,int i){
+        list <Bazen>::iterator it=bazen.begin();
+        for(int j=1;j<i;++j,++it){}
+        it->setUslovi(a);
+    }
+    void setUdaljenostBazena(int a, int i){
+        list <Bazen>::iterator it=bazen.begin();
+        for(int j=1;j<i;++j,++it){}
+        it->setUdaljenost(a);
+    }
+    void dodajBazen(float a, int b){
+        brBazena++;
+        Bazen b1(a,b);
+        bazen.push_back(b1);
+    }
+    bool izaberiBazen(int i){
+        if(i>=1 && i<=brBazena){
+            redBazena=i;
+            return true;
+        }
+        else
+            return false;
     }
     void setKvalitetOpreme(int a){
         oprema.setKvalitet(a);
@@ -110,13 +194,13 @@ public:
     void setKvantitetOpreme(int a){
         oprema.setKvantitet(a);
     }
-    void setUticajnostUprave(int a){
+    void setUticajnostUprave(float a){
         uprava.setUticajnost(a);
     }
     void setBrojLjudiUprave(int a){
         uprava.setBrojLjudi(a);
     }
-    void setFinansijeUprave(int a){
+    void setFinansijeUprave(float a){
         uprava.setFinansije(a);
     }
     void setKolicinaPlivaca(int a){
@@ -136,16 +220,16 @@ public:
         float pom2=oprema.getKvalitet()*oprema.getKvantitet()/20.00;
         float pom3=uprava.getbrojLjudi()*uprava.getUticajnost()/2.00;
         float pom4=plivaci.getDolaznost()*plivaci.getKolicina()/50.00;
-        kvalitet=(nacionalnost.getJacinu()*3+pom1+trener.getSprema()*20+bazen.getUslovi()*5
-        -bazen.getUdaljenost()+pom2+pom3+uprava.getFinansije()*5-pom4+brTrofeja)/210.00;
+        kvalitet=(nacionalnost.getJacinu()*3+pom1+getSpremaTrenera(redTrenera)*20+getUsloviBazena(redBazena)*5
+        -getUdaljenostBazena(redBazena)+pom2+pom3+uprava.getFinansije()*5-pom4+brTrofeja)/210.00;
         return kvalitet;
     }
-    friend ostream& operator<<(ostream& izlaz,const Klub &k){
+    friend ostream& operator<<(ostream& izlaz,Klub &k){
         izlaz<<"Drzava: "<<k.getDrzava()<<" Broj medalja: "<<k.getbrMedDrzave()<<" Jacina: "<<k.getJacinaDrzave()<<endl
-        <<"Trener: "<<k.getImeTrenera()<<" Rad trenera: "<<k.getSpremaTrenera()<<endl
+        <<"Trener: "<<k.getImeTrenera(k.getRedTrenera())<<" Rad trenera: "<<k.getSpremaTrenera(k.getRedTrenera())<<endl
         <<"Klub:"<<endl
         <<"Naziv: "<<k.getNaziv()<<" Broj trofeja: "<<k.getBrTrofeja()<<endl
-        <<"Bazen: "<<"Uslovi: "<<k.getUsloviBazena()<<" Udaljenost: "<<k.getUdaljenostBazena()<<endl
+        <<"Bazen: "<<"Uslovi: "<<k.getUsloviBazena(k.getRedBazena())<<" Udaljenost: "<<k.getUdaljenostBazena(k.getRedBazena())<<endl
         <<"Oprema: "<<"Kvalitet: "<<k.getKvalitetOpreme()<<" Kolicina: "<<k.getKvantitetOpreme()<<endl
         <<"Uprava: "<<"Finansije: "<<k.getFinansijeUprave()<<" Uticajnost: "<<k.getUticajnostUprave()<<" Broj ljudi: "<<k.getBrojLjudiUprave()<<endl
         <<"Plivaci: "<<"Dolaznost: "<<k.getDolaznostPlivaci()<<" Kolicina: "<<k.getKolicinaPlivaci()<<endl;
@@ -161,14 +245,18 @@ public:
         uprava=k.uprava;
         plivaci=k.plivaci;
         kvalitet=k.kvalitet;
+        redTrenera=k.redTrenera;
+        brTrenera=k.brTrenera;
+        redBazena=k.redBazena;
+        brBazena=k.brBazena;
         return *this;
     }
-    friend bool operator ==(const Klub& k1, const Klub& k2){
+    friend bool operator ==(Klub& k1, Klub& k2){
         if(k1.naziv!=k2.naziv)
             return false;
         else if(k1.getBrTrofeja()!=k2.getBrTrofeja() || k1.getDrzava()!=k2.getDrzava() || k1.getbrMedDrzave()!=k2.getbrMedDrzave()
-                || k1.getImeTrenera()!=k2.getImeTrenera() || k1.getSpremaTrenera()!=k2.getSpremaTrenera()
-                || k1.getUsloviBazena()!=k2.getUsloviBazena() || k1.getUdaljenostBazena()!=k2.getUdaljenostBazena()
+                || k1.getImeTrenera(k1.getRedTrenera())!=k2.getImeTrenera(k2.getRedTrenera()) || k1.getSpremaTrenera(k1.getRedTrenera())!=k2.getSpremaTrenera(k2.getRedTrenera())
+                || k1.getUsloviBazena(k1.getRedBazena())!=k2.getUsloviBazena(k2.getRedBazena()) || k1.getUdaljenostBazena(k1.getRedBazena())!=k2.getUdaljenostBazena(k2.getRedBazena())
                 || k1.getKvalitetOpreme()!=k2.getKvalitetOpreme() || k1.getKvantitetOpreme()!=k2.getKvantitetOpreme()
                 || k1.getFinansijeUprave()!=k2.getFinansijeUprave() || k1.getUticajnostUprave()!=k2.getUticajnostUprave() || k1.getBrojLjudiUprave()!=k2.getBrojLjudiUprave()
                 || k1.getDolaznostPlivaci()!=k2.getDolaznostPlivaci() || k1.getKolicinaPlivaci()!=k2.getKolicinaPlivaci())
@@ -176,7 +264,7 @@ public:
         else
             return true;
     }
-    friend bool operator !=(const Klub& k1, const Klub& k2){
+    friend bool operator !=(Klub& k1, Klub& k2){
         if(k1==k2)
             return false;
         else

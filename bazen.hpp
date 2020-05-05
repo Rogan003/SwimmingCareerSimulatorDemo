@@ -2,16 +2,16 @@
 #define BAZEN_HPP_INCLUDED
 class Bazen{
 private:
-    int uslovi;
+    float uslovi;
     int udaljenost;
 public:
     Bazen(){
-        uslovi=rand()%5+1;
+        uslovi=(rand()%400+100)/100.00;
         udaljenost=rand()%10+1;
         if(udaljenost>=5)
             udaljenost*=2;
     }
-    Bazen(int a,int b){
+    Bazen(float a,int b){
         if(b<0)
             udaljenost=0;
         else
@@ -30,7 +30,7 @@ public:
     int getUdaljenost()const{
         return udaljenost;
     }
-    int getUslovi()const{
+    float getUslovi()const{
         return uslovi;
     }
     void setUdaljenost(int a){
@@ -41,7 +41,7 @@ public:
         else
             udaljenost=a;
     }
-    void setUslovi(int a){
+    void setUslovi(float a){
         if(a>=5)
             uslovi=5;
         else if(a<=1)

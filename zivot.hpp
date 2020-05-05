@@ -12,8 +12,8 @@ private:
     float kvalitet;
 public:
     Zivot() : porodica(), drustvoskola(), drustvoplivanje(), vreme(), san(), opustanje(), ljubav(){}
-    Zivot(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, bool k) :
-    porodica(a,b), drustvoskola(c,d), drustvoplivanje(e,f), vreme(g), san(h), opustanje(i), ljubav(k,j){}
+    Zivot(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j) :
+    porodica(a,b), drustvoskola(c,d), drustvoplivanje(e,f), vreme(g), san(h), opustanje(i), ljubav(j){}
     Zivot(const Zivot &a) : porodica(a.porodica), drustvoskola(a.drustvoskola), drustvoplivanje(a.drustvoplivanje),
     vreme(a.vreme), san(a.san), opustanje(a.opustanje), ljubav(a.ljubav){}
     int getPorodicaFinansije()const{
@@ -42,9 +42,6 @@ public:
     }
     int getOpustanje()const{
         return opustanje.getNivo();
-    }
-    bool getLjubavPostoji()const{
-        return ljubav.getPostoji();
     }
     int getLjubavKvalitet()const{
         return ljubav.getKvalitet();
@@ -75,9 +72,6 @@ public:
     }
     void setOpustanje(int a){
         opustanje.setNivo(a);
-    }
-    void setLjubavPostoji(bool a){
-        ljubav.setPostoji(a);
     }
     void setLjubavKvalitet(int a){
         ljubav.setKvalitet(a);
