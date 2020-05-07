@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <list>
 using namespace std;
-enum drzava {Egipat,Jamajka,Srbija,Hrvatska,Svajcarska,Austrija,Italija,Rusija,Nemacka,Brazil,Australija,Kanada,Kina,VelikaBritanija,Japan,SAD};
+enum drzava{Egipat,Jamajka,Srbija,Hrvatska,Svajcarska,Austrija,Italija,Rusija,Nemacka,Brazil,Australija,Kanada,Kina,VelikaBritanija,Japan,SAD};
 enum Marka{TYR,Speedo,Arena};
 #include "drzava.hpp"
 #include "trener.hpp"
@@ -23,10 +23,6 @@ enum Marka{TYR,Speedo,Arena};
 #include "ljubav.hpp"
 #include "zivot.hpp"
 #include "tipicnaoprema.hpp"
-#include "karbon.hpp"
-#include "naocare.hpp"
-#include "kapa.hpp"
-#include "mrezica.hpp"
 #include "licnaoprema.hpp"
 #include "treninzi.hpp"
 #include "vodenitrening.hpp"
@@ -37,7 +33,7 @@ enum Marka{TYR,Speedo,Arena};
 int main()
 {
     srand(time(NULL));
-    int nedelja=1,mesec=1,godina=2020,jacina,izbor,ss=0,brtakm[2],d1[10],d2[10],d3[10],d4[10];
+    int nedelja=1,mesec=1,godina=2020,jacina,izbor,ss=0,brtakm[2],d1[10],d2[10],d3[10],d4[10],dolaz;
     int br[3]={0,0,0};
     char l;
     string ime,prezime;
@@ -309,6 +305,7 @@ int main()
             nedelja=1;
         }
         if(mesec==13){
+            dolaz=p1.getDolaznost();
             p1.godisnji(2);
             mesec=1;
             godina++;
@@ -347,6 +344,7 @@ int main()
         }
         system("cls");
     }while(odustajanje==false);
+    p1.setDolaznost(dolaz);
     cout<<"Svaka cast na vasoj plivackoj karijeri!"<<endl;
     Plivac p5=p1;
     if(p1!=p2 && p1!=p3 && p1!=p4 && p1==p5)

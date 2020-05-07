@@ -37,14 +37,10 @@
 		<Unit filename="drustvoplivanje.hpp" />
 		<Unit filename="drustvoskola.hpp" />
 		<Unit filename="drzava.hpp" />
-		<Unit filename="kapa.hpp" />
-		<Unit filename="karbon.hpp" />
 		<Unit filename="klub.hpp" />
 		<Unit filename="licnaoprema.hpp" />
 		<Unit filename="ljubav.hpp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="mrezica.hpp" />
-		<Unit filename="naocare.hpp" />
 		<Unit filename="oprema.hpp" />
 		<Unit filename="opustanje.hpp" />
 		<Unit filename="plivac.hpp" />

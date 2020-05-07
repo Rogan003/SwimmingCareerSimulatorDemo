@@ -2,13 +2,13 @@
 #define LICNAOPREMA_HPP_INCLUDED
 class licnaOprema{
 private:
-    list <Karbon> karbon;
+    list <tipicnaOprema> karbon;
     int brKarbon;
-    list <Naocare> naocare;
+    list <tipicnaOprema> naocare;
     int brNaocare;
-    list <Kapa> kapa;
+    list <tipicnaOprema> kapa;
     int brKapa;
-    list <Mrezica> mrezica;
+    list <tipicnaOprema> mrezica;
     int brMrezica;
     float kvalitet;
     float poskval;
@@ -18,17 +18,17 @@ public:
         brNaocare=1;
         brKapa=1;
         brMrezica=1;
-        list <Karbon>::iterator i=karbon.begin();
-        Karbon k1;
+        list <tipicnaOprema>::iterator i=karbon.begin();
+        tipicnaOprema k1;
         karbon.insert(i,k1);
-        list <Naocare>::iterator j=naocare.begin();
-        Naocare n1;
+        list <tipicnaOprema>::iterator j=naocare.begin();
+        tipicnaOprema n1;
         naocare.insert(j,n1);
-        list <Kapa>::iterator k=kapa.begin();
-        Kapa k2;
+        list <tipicnaOprema>::iterator k=kapa.begin();
+        tipicnaOprema k2;
         kapa.insert(k,k2);
-        list <Mrezica>::iterator l=mrezica.begin();
-        Mrezica m1;
+        list <tipicnaOprema>::iterator l=mrezica.begin();
+        tipicnaOprema m1;
         mrezica.insert(l,m1);
     }
     licnaOprema(Marka a, Marka b, Marka c, Marka d){
@@ -36,17 +36,17 @@ public:
         brNaocare=1;
         brKapa=1;
         brMrezica=1;
-        list <Karbon>::iterator i=karbon.begin();
-        Karbon k1(a);
+        list <tipicnaOprema>::iterator i=karbon.begin();
+        tipicnaOprema k1(a);
         karbon.insert(i,k1);
-        list <Naocare>::iterator j=naocare.begin();
-        Naocare n1(b);
+        list <tipicnaOprema>::iterator j=naocare.begin();
+        tipicnaOprema n1(b);
         naocare.insert(j,n1);
-        list <Kapa>::iterator k=kapa.begin();
-        Kapa k2(c);
+        list <tipicnaOprema>::iterator k=kapa.begin();
+        tipicnaOprema k2(c);
         kapa.insert(k,k2);
-        list <Mrezica>::iterator l=mrezica.begin();
-        Mrezica m1(d);
+        list <tipicnaOprema>::iterator l=mrezica.begin();
+        tipicnaOprema m1(d);
         mrezica.insert(l,m1);
     }
     licnaOprema(const licnaOprema &a){
@@ -75,62 +75,62 @@ public:
         return brNaocare;
     }
     int getKarbonKvalitet(int i){
-        list <Karbon>::iterator j=karbon.begin();
+        list <tipicnaOprema>::iterator j=karbon.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getKvalitet();
     }
     int getNaocareKvalitet(int i){
-        list <Naocare>::iterator j=naocare.begin();
+        list <tipicnaOprema>::iterator j=naocare.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getKvalitet();
     }
     int getKapaKvalitet(int i){
-        list <Kapa>::iterator j=kapa.begin();
+        list <tipicnaOprema>::iterator j=kapa.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getKvalitet();
     }
     int getMrezicaKvalitet(int i){
-        list <Mrezica>::iterator j=mrezica.begin();
+        list <tipicnaOprema>::iterator j=mrezica.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getKvalitet();
     }
     string getKarbonMarka(int i){
-        list <Karbon>::iterator j=karbon.begin();
+        list <tipicnaOprema>::iterator j=karbon.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getMarka();
     }
     string getNaocareMarka(int i){
-        list <Naocare>::iterator j=naocare.begin();
+        list <tipicnaOprema>::iterator j=naocare.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getMarka();
     }
     string getKapaMarka(int i){
-        list <Kapa>::iterator j=kapa.begin();
+        list <tipicnaOprema>::iterator j=kapa.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getMarka();
     }
     string getMrezicaMarka(int i){
-        list <Mrezica>::iterator j=mrezica.begin();
+        list <tipicnaOprema>::iterator j=mrezica.begin();
         for(int k=1;k<i;++j,++k){}
         return j->getMarka();
     }
     void setKarbonMarka(Marka a){
-        Karbon k1(a);
+        tipicnaOprema k1(a);
         karbon.push_back(k1);
         brKarbon++;
     }
     void setNaocareMarka(Marka a){
-        Naocare k1(a);
+        tipicnaOprema k1(a);
         naocare.push_back(k1);
         brNaocare++;
     }
     void setKapaMarka(Marka a){
-        Kapa k1(a);
+        tipicnaOprema k1(a);
         kapa.push_back(k1);
         brKapa++;
     }
     void setMrezicaMarka(Marka a){
-        Mrezica k1(a);
+        tipicnaOprema k1(a);
         mrezica.push_back(k1);
         brMrezica++;
     }
@@ -138,25 +138,25 @@ public:
         int i,j,k,l;
         if(igrac==true){
             cout<<"Izaberite karbon(redni broj):";
-            list<Karbon>::iterator it=karbon.begin();
+            list<tipicnaOprema>::iterator it=karbon.begin();
             for(int o=1;it!=karbon.end();++it,++o)
                 cout<<o<<". "<<it->getMarka()<<endl;
             cin>>i;
             cout<<"---"<<endl;
             cout<<"Izaberite naocare(redni broj):";
-            list<Naocare>::iterator it2=naocare.begin();
+            list<tipicnaOprema>::iterator it2=naocare.begin();
             for(int o=1;it2!=naocare.end();++it2,++o)
                 cout<<o<<". "<<it2->getMarka()<<endl;
             cin>>j;
             cout<<"---"<<endl;
             cout<<"Izaberite kapu(redni broj):";
-            list<Kapa>::iterator it3=kapa.begin();
+            list<tipicnaOprema>::iterator it3=kapa.begin();
             for(int o=1;it3!=kapa.end();++it3,++o)
                 cout<<o<<". "<<it3->getMarka()<<endl;
             cin>>k;
             cout<<"---"<<endl;
             cout<<"Izaberite mrezicu(redni broj):";
-            list<Mrezica>::iterator it4=mrezica.begin();
+            list<tipicnaOprema>::iterator it4=mrezica.begin();
             for(int o=1;it4!=mrezica.end();++it4,++o)
                 cout<<o<<". "<<it4->getMarka()<<endl;
             cin>>l;

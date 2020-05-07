@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1588706207 source:c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\main.cpp
+1588885116 source:c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\main.cpp
 	<iostream>
 	<cmath>
 	<ctime>
@@ -22,10 +22,6 @@
 	"ljubav.hpp"
 	"zivot.hpp"
 	"tipicnaoprema.hpp"
-	"karbon.hpp"
-	"naocare.hpp"
-	"kapa.hpp"
-	"mrezica.hpp"
 	"licnaoprema.hpp"
 	"treninzi.hpp"
 	"vodenitrening.hpp"
@@ -66,7 +62,7 @@
 
 1588594918 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\zivot.hpp
 
-1588443064 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\tipicnaoprema.hpp
+1588883183 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\tipicnaoprema.hpp
 
 1588443099 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\karbon.hpp
 
@@ -76,7 +72,7 @@
 
 1588443198 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\mrezica.hpp
 
-1588443248 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\licnaoprema.hpp
+1588883617 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\licnaoprema.hpp
 
 1588443286 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\treninzi.hpp
 
