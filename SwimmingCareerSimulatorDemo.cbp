@@ -34,8 +34,6 @@
 		</Compiler>
 		<Unit filename="bazen.hpp" />
 		<Unit filename="drustvo.hpp" />
-		<Unit filename="drustvoplivanje.hpp" />
-		<Unit filename="drustvoskola.hpp" />
 		<Unit filename="drzava.hpp" />
 		<Unit filename="klub.hpp" />
 		<Unit filename="licnaoprema.hpp" />

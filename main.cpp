@@ -15,8 +15,6 @@ enum Marka{TYR,Speedo,Arena};
 #include "klub.hpp"
 #include "porodica.hpp"
 #include "drustvo.hpp"
-#include "drustvoskola.hpp"
-#include "drustvoplivanje.hpp"
 #include "slobodnovreme.hpp"
 #include "spavanje.hpp"
 #include "opustanje.hpp"

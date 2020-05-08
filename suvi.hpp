@@ -2,7 +2,6 @@
 #define SUVI_HPP_INCLUDED
 class Suvi : public Treninzi{
 private:
-    int ukupno;
     int pravilnost;
     int vezbe;
     int istezanje;

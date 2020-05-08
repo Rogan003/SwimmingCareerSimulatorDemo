@@ -2,7 +2,6 @@
 #define TERETANA_HPP_INCLUDED
 class Teretana : public Treninzi{
 private:
-    int ukupno;
     int pravilnost;
     int vezbe;
 public:

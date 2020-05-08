@@ -2,7 +2,6 @@
 #define VODENITRENING_HPP_INCLUDED
 class vodeniTrening : public Treninzi{
 private:
-    int ukupno;
     int tehnika;
 public:
     vodeniTrening(){

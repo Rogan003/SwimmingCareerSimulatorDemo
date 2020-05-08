@@ -3,8 +3,8 @@
 class Zivot{
 private:
     Porodica porodica;
-    DrustvoSkola drustvoskola;
-    DrustvoPlivanje drustvoplivanje;
+    Drustvo drustvoskola;
+    Drustvo drustvoplivanje;
     slobodnoVreme vreme;
     Spavanje san;
     Opustanje opustanje;

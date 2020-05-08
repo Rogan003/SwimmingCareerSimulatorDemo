@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1588885116 source:c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\main.cpp
+1588929907 source:c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\main.cpp
 	<iostream>
 	<cmath>
 	<ctime>
@@ -14,8 +14,6 @@
 	"klub.hpp"
 	"porodica.hpp"
 	"drustvo.hpp"
-	"drustvoskola.hpp"
-	"drustvoplivanje.hpp"
 	"slobodnovreme.hpp"
 	"spavanje.hpp"
 	"opustanje.hpp"
@@ -46,7 +44,7 @@
 
 1588442709 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\porodica.hpp
 
-1588442742 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvo.hpp
+1588929890 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvo.hpp
 
 1588442799 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\drustvoskola.hpp
 
@@ -60,7 +58,7 @@
 
 1588594892 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\ljubav.hpp
 
-1588594918 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\zivot.hpp
+1588929890 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\zivot.hpp
 
 1588883183 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\tipicnaoprema.hpp
 
@@ -74,13 +72,13 @@
 
 1588883617 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\licnaoprema.hpp
 
-1588443286 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\treninzi.hpp
+1588930030 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\treninzi.hpp
 
-1588443315 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\vodenitrening.hpp
+1588930030 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\vodenitrening.hpp
 
-1588443347 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\teretana.hpp
+1588930030 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\teretana.hpp
 
-1588443377 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\suvi.hpp
+1588930030 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\suvi.hpp
 
 1588621656 c:\Škola(programiranje)\code blocks\swimmingcareersimulatordemo\trenazniproces.hpp
 
